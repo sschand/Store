@@ -8,4 +8,4 @@ Database: Mongo
 Deployed on AWS
 
 
-** No validations currently applied as this Project was to show a simple MEAN application
+** No validations currently applied as this Project was to demonstrate a simple MEAN application
