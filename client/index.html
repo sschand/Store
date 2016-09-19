@@ -8,11 +8,12 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
     <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <script type="text/javascript">
-        var myApp = angular.module('myApp', ['ngRoute', 'ngMessages']);
+    var myApp = angular.module('myApp', ['ngRoute', 'ngMessages']);
 
     </script>
 
     <!-- Factories and Controllers -->
+    <script src="/static/js/all.js"></script>
     <script src="/static/js/app_script.js"></script>
     <script src="/static/js/foundation.min.js"></script>
     <script src="/static/js/factories/customerFactory.js"></script>
@@ -39,21 +40,32 @@
 
 </head>
 <body ng-app="myApp">
-    <div class="container no-bold"><div id="description">
-<h5>Description:<span class="hide_description">x</span></h5>
+    <!-- <div class="container no-bold">
+    <div id="description">
+
+    <h5>Description:<span class="hide_description">x</span></h5>
     Mini Store App using MEAN A single-page application creating using the MEAN stack. Products/Customers/Orders pages are updated as soon as any changes are made. All pages are using Client-side Angular filters. Created a REST API using Express to pull/update/delete records from the database<br><br>
 
-    <b>Technologies: Front End: Angular, Skeleton for responsive design Back-end: Express and Node server Database: Mongo Deployed on AWS</b></p></div></div>
-    <div class="container">
-        <div id="navigation">
-            <a href="#/dashboard">Dashboard</a>
-            <a href="#/products">Products</a>
-            <a href="#/orders">Orders</a>
-            <a href="#/customers">Customers</a>
-        </div>
+    <b>Technologies: Front End: Angular, Skeleton for responsive design Back-end: Express and Node server Database: Mongo Deployed on AWS</b></p>
+</div>
+</div>-->
+<div class="row">
 
-        <div ng-view="">
-        </div>
+    <ul class="menu">
+        <li class="active"><a href="#/dashboard">Dashboard</a></li>
+        <li><a href="#/products">Products</a></li>
+        <li><a href="#/orders">Orders</a></li>
+        <li><a href="#/customers">Customers</a></li>
+    </ul>
+    <!-- <div id="row">
+        <a href="#/dashboard">Dashboard</a>
+        <a href="#/products">Products</a>
+        <a href="#/orders">Orders</a>
+        <a href="#/customers">Customers</a>
+    </div> -->
+
+    <div ng-view="">
     </div>
+</div>
 </body>
 </html>

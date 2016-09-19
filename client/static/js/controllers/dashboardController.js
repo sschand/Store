@@ -24,11 +24,5 @@ myApp.controller('DashboardController', function($scope, ProductFactory, OrderFa
         return moment(sentDate).fromNow();
     };
 
-    $(function() {
-        $(".hide_description").on("click", function(){
-            $("#description").slideUp( "slow", function() {
-                // Animation complete.
-            });
-        })
-    })
+    
 })
