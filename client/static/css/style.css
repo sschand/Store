@@ -1,13 +1,92 @@
-.body{
-    background-color: #f5f5f5;
+body{
+    /*background-color: #f5f5f5;*/
+    /*background-color: #708090;*/
+
+
+    /*color: #f0ffff !important;*/
 }
 #navigation{
-    
+
 }
 #navigation a{
 
 }
 
+.align_center{
+    text-align: center;
+}
+.dashboard_body{
+    /*margin: 0px !important;*/
+    padding: 1.5em;
+    /*background-color: #708090;*/
+    /*background: black;*/
+}
+.menu-centered{
+    /*background-color: #f0ffff;*/
+    background-color: #708090;
+}
+
+.menu .active>a{
+    /*background: black !important;*/
+    background: white !important;
+    color: #708090 !important;
+}
+.thumbnail > img {
+    height: 2.5em;
+    width: 2.5em;
+}
+.img_box{
+    margin: 0em 1em;
+}
+
+.off_left{
+    margin-left: 5%;
+}
+.img_box p{
+    margin: 0px !important;
+    text-align: center;
+}
+
+.dashboard_right{
+    /*border-left: 1px solid white;*/
+    border-left: 1px solid grey;
+}
+
+.products {
+    margin-top: 1em;
+
+}
+
+.dashboard_left{
+    margin-top: 1em;
+}
+.products{
+
+}
+
+#store-name{
+    border-bottom: 1px solid #708090;
+    margin-bottom: 0;
+}
+
+.amazing_background {
+    background: #fff;
+    color: #555 !important;
+    /* font-family: sans-serif; */
+    border: 1px solid #ddd;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF));
+    background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE);
+    -webkit-box-shadow: 0px 0 50px #ccc;
+    -moz-box-shadow: 0px 0 50px #ccc;
+    box-shadow: 0px 0 50px #ccc;
+    /*padding: 30px 40px 20px 40px;
+    margin: 10px 0 10px 0;*/
+    margin: 1em 0;
+}
+/*
 .div_border{
     border: 1px solid black;
     padding: 5%;
@@ -62,7 +141,7 @@ img.thumbnail {
 #description{
 	background: #fff;
 	color: #555 !important;
-	/*font-family: sans-serif;*/
+
 	border: 1px solid #ddd;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -85,4 +164,4 @@ span.hide_description{
     float: right;
     font-size: 16px;
     cursor: pointer;
-}
+} */

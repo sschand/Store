@@ -1,44 +1,81 @@
-<div class="" ng-controller="DashboardController">
-    <div class="row">
-        <div class="two columns">
-            <form>
-                <input type="text" ng-model="dashboard_filter" placeholder="search..."  ng-model="filter_name">
-                <button class="right button-primary" type="button" ng-click="filter()">Filter</button>
-            </form>
+<div ng-controller="DashboardController">
+    <div class="dashboard_body">
+        <div class="row">
+            <h2 id="store-name">Welcome to the Mini Store!</h2>
         </div>
-        <div class="ten columns">
-            <div class="row">
-                <div class="two columns img_box" ng-repeat="product in products | limitTo: 5 | filter: dashboard_filter">
-                    <img class="prod" ng-src="https://pixabay.com/static/uploads/photo/2015/10/01/21/39/background-image-967820_960_720.jpg" alt="" />
-                    <p>{{product.name}}</p>
-                    <p>( {{product.amountLeft}} left)</p>
+        <div class="row">
+            <!-- Left: Filter -->
+            <div class="small-2 large-expand columns dashboard_left">
+                <form>
+                    <div class="row">
+                        <div class="medium-12 columns">
+                            <h4>Type to Filter</h4>
+                            <label>
+                                <input type="text" ng-model="dashboard_filter" placeholder="search..."  ng-model="filter_name">
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right: Products, Orders, Customers -->
+            <div class="small-10 large-expand columns dashboard_right">
+                <!-- Products -->
+                <div class="products">
+                    <div class="small-2 large-expand columns img_box" ng-repeat="product in products | limitTo: 5 | filter: dashboard_filter">
+                        <img class="prod" ng-src="{{product.link}}" alt="" />
+
+                        <p>{{product.name}}</p>
+                        <p>( {{product.amountLeft}} left )</p>
+                    </div>
+
+                    <!-- Products more.. -->
+                    <div class="row">
+                        <div class="align_center">
+                            <a class="button" href="#/products">show all products...</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row center">
-                <a href="#/products">show more...</a>
-            </div>
+                <hr>
 
-            <!-- RECENT ORDERS -->
-            <hr>
-            <div class="row">
-                <h5>Recent Orders</h5>
-                <p class="off_left" ng-repeat="order in orders | orderBy:'-createdAt' | limitTo: 3 | filter: dashboard_filter">{{ order.name }} purchased {{ order.quantity }} {{ order.product }}...({{ timeAgo(order.createdAt) }})</p>
-            </div>
+                <!-- Orders -->
+                <div class="orders">
+                    <h3>Recent Orders</h3>
+                    <p class="off_left" ng-repeat="order in orders | orderBy:'-createdAt' | limitTo: 3 | filter: dashboard_filter">{{ order.name }} purchased {{ order.quantity }} {{ order.product }}...({{ timeAgo(order.createdAt) }})</p>
 
-            <div class="row center">
-                <a href="#/orders">show all orders...</a>
-            </div>
+                    <!-- Orders more.. -->
+                    <div class="row ">
+                        <div class="align_center">
+                            <a class="button" href="#/orders">show all orders...</a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
 
-            <!-- NEW CUSTOMERS -->
-            <hr>
-            <div class="row">
-                <h5>New Customers</h5>
-                <p class="off_left" ng-repeat="customer in customers | orderBy:'-createdAt' | limitTo: 3 | filter: dashboard_filter"> <img class="thumbnail" src="http://www.iac-cs.org/wp-content/uploads/2015/02/nopicture.png" alt="" /> <span class=" vert_center">{{ customer.name }} joined the store. ({{ timeAgo(customer.createdAt) }})</span></p>
-            </div>
+                <!-- Customers -->
+                <div class="customers">
+                    <h3>New Customers</h3>
+                    <div class="off_left" ng-repeat="customer in customers | orderBy:'-createdAt' | limitTo: 3 | filter: dashboard_filter">
+                        <div class="media-object">
+                            <div class="media-object-section">
+                                <div class="thumbnail">
+                                    <img src="http://www.iac-cs.org/wp-content/uploads/2015/02/nopicture.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="media-object-section main-section">
+                                <p>{{ customer.name }} joined the store. ({{ timeAgo(customer.createdAt) }})</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="row center">
-                <a href="#/customers">show all customers...</a>
+                    <!-- Customers more.. -->
+                    <div class="row ">
+                        <div class="align_center">
+                            <a class="button" href="#/customers">show all customers...</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
