@@ -15,7 +15,7 @@ body{
 .align_center{
     text-align: center;
 }
-.dashboard_body{
+.view_body{
     /*margin: 0px !important;*/
     padding: 1.5em;
     /*background-color: #708090;*/
@@ -47,7 +47,7 @@ body{
     text-align: center;
 }
 
-.dashboard_right{
+.view_right{
     /*border-left: 1px solid white;*/
     border-left: 1px solid grey;
 }
@@ -57,16 +57,23 @@ body{
 
 }
 
-.dashboard_left{
+.view_left{
     margin-top: 1em;
 }
-.products{
-
+.filter_section {
+    border-bottom: 1px solid #708090;
+}
+.product_each {
+        display: inline-block;
 }
 
-#store-name{
+.store-name{
     border-bottom: 1px solid #708090;
     margin-bottom: 0;
+}
+img.prod{
+    height: 10em;
+    width: 10em;
 }
 
 .amazing_background {

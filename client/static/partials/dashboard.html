@@ -1,11 +1,11 @@
 <div ng-controller="DashboardController">
-    <div class="dashboard_body">
+    <div class="view_body">
         <div class="row">
-            <h2 id="store-name">Welcome to the Mini Store!</h2>
+            <h2 class="store-name">Welcome to the Mini Store - Dashboard!</h2>
         </div>
         <div class="row">
             <!-- Left: Filter -->
-            <div class="small-2 large-expand columns dashboard_left">
+            <div class="small-2 large-expand columns view_left">
                 <form>
                     <div class="row">
                         <div class="medium-12 columns">
@@ -19,10 +19,10 @@
             </div>
 
             <!-- Right: Products, Orders, Customers -->
-            <div class="small-10 large-expand columns dashboard_right">
+            <div class="small-10 large-expand columns view_right">
                 <!-- Products -->
                 <div class="products">
-                    <div class="small-2 large-expand columns img_box" ng-repeat="product in products | limitTo: 5 | filter: dashboard_filter">
+                    <div class="img_box product_each" ng-repeat="product in products | limitTo: 5 | filter: dashboard_filter">
                         <img class="prod" ng-src="{{product.link}}" alt="" />
 
                         <p>{{product.name}}</p>

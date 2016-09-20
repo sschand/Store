@@ -1,41 +1,51 @@
-<div class="" ng-controller="ProductsController">
-    <div class="row">
-        <div class="three columns">
-            <form>
-                <input type="text" ng-model="dashboard_filter" placeholder="search..."  ng-model="filter_name">
-                <button class="right button-primary" type="button" ng-click="filter()">Filter</button>
-            </form>
-
-            <h5>Add a new product</h5>
-            <form>
-                <label for="name">Name</label>
-                <input class="u-full-width" type="text" placeholder="name..." ng-model="newProduct.name">
-
-                <label for="link">Image(url):</label>
-                <input class="u-full-width" type="text" placeholder="http://" ng-model="newProduct.link">
-
-                <label for="description">Description:</label>
-                <textarea class="u-full-width" ng-model="newProduct.description"></textarea>
-
-                <label for="amountLeft">Initial Quantity:</label>
-                <select class="u-full-width" ng-model="newProduct.amountLeft">
-                    <option ng-repeat="i in getNumber(number) track by $index" value="{{ $index + 1 }}" >{{ $index + 1 }}</option>
-                </select>
-                <button class="button-primary right" type="button" ng-click="addProduct()">Create</button>
-            </form>
+<div ng-controller="ProductsController">
+    <div class="view_body">
+        <div class="row">
+            <h2 class="store-name">Welcome to the Mini Store - Products!</h2>
         </div>
-        <div class="nine columns">
-            <div class="row">
-                <div class="two columns img_box" ng-repeat="product in products | limitTo: 15 | filter: dashboard_filter">
-                    <img class="prod" ng-src="{{ product.link }}" alt="" />
-                    <p>{{product.name}}</p>
-                    <p>({{product.amountLeft}} left)</p>
-                </div>
 
+        <div class="row">
+            <!-- Left: Filter -->
+            <div class="small-2 large-expand columns view_left">
+                <form>
+                    <div class="row filter_section">
+                        <div class="medium-12 columns">
+                            <h4>Type to Filter</h4>
+                            <label>
+                                <input type="text" ng-model="dashboard_filter" placeholder="search..."  ng-model="filter_name">
+                            </label>
+                        </div>
+                    </div>
+                </form>
+
+                <h4>Add product</h4>
+                <form>
+                    <label for="name">Name</label>
+                    <input class="u-full-width" type="text" placeholder="name..." ng-model="newProduct.name">
+
+                    <label for="link">Image(url):</label>
+                    <input class="u-full-width" type="text" placeholder="http://" ng-model="newProduct.link">
+
+                    <label for="description">Description:</label>
+                    <textarea class="u-full-width" ng-model="newProduct.description"></textarea>
+
+                    <label for="amountLeft">Initial Quantity:</label>
+                    <select class="u-full-width" ng-model="newProduct.amountLeft">
+                        <option ng-repeat="i in getNumber(number) track by $index" value="{{ $index + 1 }}" >{{ $index + 1 }}</option>
+                    </select>
+                    <button class="button right" type="button" ng-click="addProduct()">Create</button>
+                </form>
             </div>
 
-            <div class="row center">
-                <a href="#/products">show more...</a>
+            <!-- Right: Products -->
+            <div class="small-10 large-expand columns view_right">
+                <div class="products">
+                    <div class="img_box product_each" ng-repeat="product in products | filter: dashboard_filter">
+                        <img class="prod" ng-src="{{ product.link }}" alt="" />
+                        <p>{{product.name}}</p>
+                        <p>({{product.amountLeft}} left)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

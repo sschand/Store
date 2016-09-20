@@ -9,4 +9,4 @@ $(function() {
         $(this).addClass('active');
         $(".menu li").not(this).removeClass('active');
     });
-})
+});
