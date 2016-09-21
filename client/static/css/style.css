@@ -3,7 +3,7 @@ body{
     /*background-color: #708090;*/
 
 
-    /*color: #f0ffff !important;*/
+    color: black !important;
 }
 #navigation{
 
@@ -18,12 +18,34 @@ body{
 .view_body{
     /*margin: 0px !important;*/
     padding: 1.5em;
-    /*background-color: #708090;*/
-    /*background: black;*/
+    /* IE10+ */
+background-image: -ms-radial-gradient(right bottom, ellipse farthest-corner, #FFFFFF 0%, #1583CC 100%);
+
+/* Mozilla Firefox */
+background-image: -moz-radial-gradient(right bottom, ellipse farthest-corner, #FFFFFF 0%, #1583CC 100%);
+
+/* Opera */
+background-image: -o-radial-gradient(right bottom, ellipse farthest-corner, #FFFFFF 0%, #1583CC 100%);
+
+/* Webkit (Safari/Chrome 10) */
+background-image: -webkit-gradient(radial, right bottom, 0, right bottom, 572, color-stop(0, #FFFFFF), color-stop(100, #1583CC));
+
+/* Webkit (Chrome 11+) */
+background-image: -webkit-radial-gradient(right bottom, ellipse farthest-corner, #FFFFFF 0%, #1583CC 100%);
+
+/* W3C Markup */
+background-image: radial-gradient(ellipse farthest-corner at right bottom, #FFFFFF 0%, #1583CC 100%);
+
 }
 .menu-centered{
     /*background-color: #f0ffff;*/
-    background-color: #708090;
+    /*background-color: #708090;*/
+    background-color: black;
+}
+a.button, button.button {
+    background-color: black !important;
+    border-radius: .5em;
+    box-shadow: 0 0 1em #f1f1f1;
 }
 
 .menu .active>a{
@@ -48,8 +70,7 @@ body{
 }
 
 .view_right{
-    /*border-left: 1px solid white;*/
-    border-left: 1px solid grey;
+    border-left: 1px solid #e6e6e6;
 }
 
 .products {
@@ -61,14 +82,14 @@ body{
     margin-top: 1em;
 }
 .filter_section {
-    border-bottom: 1px solid #708090;
+    border-bottom: 2px solid #e6e6e6;
 }
 .product_each {
         display: inline-block;
 }
 
 .store-name{
-    border-bottom: 1px solid #708090;
+    border-bottom: 2px solid #e6e6e6;
     margin-bottom: 0;
 }
 img.prod{
