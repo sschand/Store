@@ -1,43 +1,66 @@
 <div class="container" ng-controller="OrdersController">
-    <h3>Add a new order</h3>
+    <div class="view_body">
+        <div class="row">
+            <h2 class="store-name">Welcome to the Mini Store!</h2>
+        </div>
 
-    <div class="row">
-        Customer <select ng-model="newOrder.name">
-            <option ng-repeat="customer in customerList" value="{{ customer.name }}">{{ customer.name }}</option>
+        <div class="row">
+            <!-- Left: Filter -->
+            <div class="small-2 large-expand columns view_left">
+                <form>
+                    <div class="row filter_section">
+                        <div class="medium-12 columns">
+                            <h4>Type to Filter</h4>
+                            <label>
+                                <input class="right" type="text" name="name" value="" placeholder="search name..." ng-model="filter_name">
+                            </label>
+                        </div>
+                    </div>
+                </form>
 
-        </select>
+                <h4>Add product</h4>
+                <form>
+                    <label for="customer">Customer</label>
+                    <select ng-model="newOrder.name">
+                        <option ng-repeat="customer in customerList" value="{{ customer.name }}">{{ customer.name }}</option>
+                    </select>
+
+                    <label for="quantity">Quantity</label>
+                    <select ng-model="newOrder.quantity">
+                        <option ng-repeat="i in getNumber(number) track by $index" value="{{ $index + 1 }}" >{{ $index + 1 }}</option>
+                    </select>
+
+                    <label for="product">Product</label>
+                    <select ng-model="newOrder.product">
+                        <option ng-repeat="product in products" value="{{ product.name }}">{{ product.name }}</option>
+                    </select>
+                    <button class="button" type="button" name="button" ng-click="addOrder()">Order</button>
+                </form>
+            </div>
+
+            <!-- Right: Orders -->
+            <div class="small-10 large-expand columns view_right">
+                <div class="products orders">
+                    <table class="stack hover">
+                        <thead>
+                            <tr>
+                                <th>Customer Name</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="order in orders | filter: filter_name">
+                                <td>{{ order.name }}</td>
+                                <td>{{ order.product }}</td>
+                                <td>{{ order.quantity }}</td>
+                                <td>{{ toDay(order.createdAt) }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row">
-    <form>
-        Order <select ng-model="newOrder.quantity">
-            <option ng-repeat="i in getNumber(number) track by $index" value="{{ $index + 1 }}" >{{ $index + 1 }}</option>
-
-        </select>
-
-        <select ng-model="newOrder.product">
-            <option ng-repeat="product in products" value="{{ product.name }}">{{ product.name }}</option>
-        </select>
-        <button class="button-primary" type="button" name="button" ng-click="addOrder()">Order</button>
-    </form>
-    </div>
-
-    <input class="right" type="text" name="name" value="" placeholder="search name..." ng-model="filter_name">
-    <table class="u-full-width">
-        <thead>
-            <tr>
-                <th>Customer Name</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="order in orders | filter: filter_name">
-                <td>{{ order.name }}</td>
-                <td>{{ order.product }}</td>
-                <td>{{ order.quantity }}</td>
-                <td>{{ toDay(order.createdAt) }}</td>
-            </tr>
-        </tbody>
-    </table>
 </div>

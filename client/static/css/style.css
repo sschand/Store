@@ -114,6 +114,10 @@ img.prod{
     margin: 10px 0 10px 0;*/
     margin: 1em 0;
 }
+
+.view_right table tbody, .view_right table tfoot, .view_right table thead, .view_right table tbody tr:nth-child(even) {
+    background-color: transparent !important;
+}
 /*
 .div_border{
     border: 1px solid black;
