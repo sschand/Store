@@ -1,7 +1,7 @@
 myApp.config(function($routeProvider) {
     $routeProvider
     .when('/', {
-        templateUrl: 'static/partials/orders.html'
+        templateUrl: 'static/partials/dashboard.html'
     })
     .when('/dashboard', {
         templateUrl: 'static/partials/dashboard.html'
