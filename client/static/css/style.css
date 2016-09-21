@@ -15,7 +15,11 @@ body{
 .align_center{
     text-align: center;
 }
+#customers_page .view_body{
+    height: 100%;
+}
 .view_body{
+    height: auto;
     /*margin: 0px !important;*/
     padding: 1.5em;
     /* IE10+ */
