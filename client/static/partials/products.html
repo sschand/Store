@@ -19,18 +19,34 @@
                 </form>
 
                 <h4>Add product</h4>
-                <form>
-                    <label for="name">Name</label>
-                    <input class="u-full-width" type="text" placeholder="name..." ng-model="newProduct.name">
+                <form name="productForm">
+                    <label for="prod_name">Name:
+                        <span ng-messages="productForm.prod_name.$error" style="color:maroon" role="alert">
+                         <span ng-message="required">is required.</span>
+                        </span>
+                    </label>
+                    <input name="prod_name" type="text" placeholder="name..." ng-model="newProduct.name" required>
 
-                    <label for="link">Image(url):</label>
-                    <input class="u-full-width" type="text" placeholder="http://" ng-model="newProduct.link">
+                    <label for="link">Image(url):
+                        <span ng-messages="productForm.link.$error" style="color:maroon" role="alert">
+                         <span ng-message="required">is required.</span>
+                        </span>
+                    </label>
+                    <input name="link" type="text" placeholder="http://" ng-model="newProduct.link" required>
 
-                    <label for="description">Description:</label>
-                    <textarea class="u-full-width" ng-model="newProduct.description"></textarea>
+                    <label for="description">Description:
+                        <span ng-messages="productForm.description.$error" style="color:maroon" role="alert">
+                         <span ng-message="required">is required.</span>
+                        </span>
+                    </label>
+                    <textarea name="description" ng-model="newProduct.description" required></textarea>
 
-                    <label for="amountLeft">Initial Quantity:</label>
-                    <select class="u-full-width" ng-model="newProduct.amountLeft">
+                    <label for="amountLeft">Initial Quantity:
+                        <span ng-messages="productForm.amountLeft.$error" style="color:maroon" role="alert">
+                         <span ng-message="required">is required.</span>
+                        </span>
+                    </label>
+                    <select name="amountLeft" ng-model="newProduct.amountLeft" required>
                         <option ng-repeat="i in getNumber(number) track by $index" value="{{ $index + 1 }}" >{{ $index + 1 }}</option>
                     </select>
                     <button class="button right" type="button" ng-click="addProduct()">Create</button>

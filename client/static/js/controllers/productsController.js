@@ -17,6 +17,8 @@ myApp.controller('ProductsController', function($scope, ProductFactory) {
         ProductFactory.create($scope.newProduct, function(data) {
             ProductFactory.index(function(data) {
                 $scope.products = data;
+                alert("New Product added!");
+                $scope.newProduct = {};
             });
         });
     }
