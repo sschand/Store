@@ -6,4 +6,4 @@ Technologies:
 Front End: Angular, Skeleton for responsive design
 Back-end: Express and Node server
 Database: Mongo
-Deployed on AWS
+Deployed on AWS http://52.53.163.120/
